@@ -1,0 +1,59 @@
+"use client";
+
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, Button, NavbarMenu, NavbarMenuItem } from "@heroui/react";
+import Link from "next/link";
+import Image from "next/image";
+import React, { useState } from "react";
+
+/* Imagenes menu mobil */
+import open from '@/features/home/img/principal.png'
+import close from '@/features/home/img/secundaria.png'
+
+
+export function Navegador() {
+
+    const [menuOpen, setMenuOpen] = useState(false)
+
+    return (
+        <nav className="relative w-full h-19 shadow-md shadow-gray-500 p-3 grid grid-cols-2 bg-black/90">
+            <div className="hidden sm:flex justify-end items-center">
+                <div className="mr-5">
+                    <Link href="/" className="text-gray-300 text-lg inset-shadow-xs inset-shadow-gray-200 p-3 rounded-lg duration-250 hover:bg-white hover:text-black active:p-2 ">Home</Link>
+                </div>
+                <div>
+                    <Link href="/about" className="text-gray-300 text-lg inset-shadow-xs inset-shadow-gray-200 p-3 rounded-lg duration-250 hover:bg-white hover:text-black active:p-2">About</Link>
+                </div>
+            </div>
+            <div className="hidden sm:flex justify-end items-center mr-5">
+                <div className="mr-5">
+                    <Link href="/login" className="text-white text-lg rounder-lg p-3 duration-250 hover:rounded-lg hover:border-1 hover:border-red-900 hover:bg-red-500 active:p-2">Sign In</Link>
+                </div>
+                <div>
+                    <Link href="/register" className="text-white text-lg rounder-lg p-3 duration-250 hover:rounded-lg hover:border-1 hover:border-blue-900 hover:bg-blue-500 active:p-2">Sign Up</Link>
+                </div>
+            </div>
+
+            <div className="flex items-center text-white sm:hidden">
+                <button
+                    onClick={() => setMenuOpen(!menuOpen)}
+                >
+                    {menuOpen ? (
+                        <Image src={close} alt="menu" width={40} height={40} className="object-contain" />
+                    ) : (
+                        <Image src={open} alt="menu" width={40} height={40} className="object-contain" />
+                    )}
+                </button>
+            </div>
+
+            {menuOpen && (
+                <div className="absolute top-full left-0 w-full bg-black/95 p-4 flex flex-col items-center gap-3 sm:hidden shadow-md shadow-gray-700 z-40">
+                    <Link href="/" className="text-white">Home</Link>
+                    <Link href="/about" className="text-white">About</Link>
+                    <Link href="/login" className="text-red-600">Sign In</Link>
+                    <Link href="/register" className="text-blue-600">Sign Up</Link>
+                </div>
+            )}
+
+        </nav>
+    );
+}
