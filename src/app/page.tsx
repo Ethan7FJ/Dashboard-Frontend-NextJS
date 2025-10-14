@@ -19,7 +19,7 @@ export default function Home() {
           <Dash />
         </main>
         <footer className="w-full h-16 bg-black flex items-center justify-center p-3">
-
+          <p className="text-white">Desarrollado por Johan Fetecua © 2025</p>
         </footer>
       </div>
     </QueryClientProvider>

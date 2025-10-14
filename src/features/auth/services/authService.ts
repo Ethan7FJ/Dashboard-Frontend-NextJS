@@ -1,10 +1,13 @@
-export const authService = {
-  async login(email: string, password: string) {
-    const res = await fetch("/login", {
-      method: "POST",
-      body: JSON.stringify({ email, password }),
-      headers: { "Content-Type": "application/json" }
-    });
-    return res.json();
-  },
-};
+import { AuthPorts } from "@/lib/auth.services";
+import { useMutation } from "@tanstack/react-query";
+
+const AuthRegister = async (data: any) => {
+  const res = await AuthPorts.post("/register", data);
+  return res.data.mensaje
+}
+
+export function useCreateUser() {
+  return useMutation({
+    mutationFn: AuthRegister
+  })
+}

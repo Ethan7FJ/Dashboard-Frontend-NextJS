@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { authService } from "../services/authService";
 import { Form, Input, Button } from "@heroui/react";
+import Link from "next/link";
 
 export function LoginForm() {
   const [email, setEmail] = useState("");
@@ -44,6 +45,7 @@ export function LoginForm() {
         />
       </div>
       <Button type="submit">Ingresar</Button>
+      <Link href="/"> Regresar</Link>
     </Form>
   );
 }
