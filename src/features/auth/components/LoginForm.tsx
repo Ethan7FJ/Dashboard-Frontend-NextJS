@@ -1,17 +1,25 @@
 "use client";
 import { useState } from "react";
-import { authService } from "../services/authService";
 import { Form, Input, Button } from "@heroui/react";
 import Link from "next/link";
+import { useLoginUser } from "../services/authService";
 
 export function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  async function handleSubmit(e: React.FormEvent) {
+  const mutation = useLoginUser();
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    await authService.login(email, password);
+    let data = Object.fromEntries(new FormData(e.currentTarget));
+    mutation.mutate(data);
   }
+
+  if (mutation.isSuccess) {
+        alert("Inicio de sesion completo");
+        window.location.href = "/inicio";
+    }
 
   return (
     <Form
