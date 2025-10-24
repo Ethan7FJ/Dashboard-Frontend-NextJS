@@ -1,7 +1,7 @@
 "use client";
 
 import { QueryClient, QueryClientProvider, useQuery, } from '@tanstack/react-query'
-import { Temporal } from '@/features/dashboard/components/temporal';
+import { HomeDashboard } from '@/features/dashboard/components/homeDashboard';
 
 const queryClient = new QueryClient()
 
@@ -9,7 +9,7 @@ export default function DashPage() {
     return (
         <QueryClientProvider client={queryClient}>
             <div>
-                <Temporal/>
+                <HomeDashboard/>
             </div>
         </QueryClientProvider>
     )

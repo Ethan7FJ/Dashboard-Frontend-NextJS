@@ -1,6 +1,5 @@
 "use client";
 
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, Button, NavbarMenu, NavbarMenuItem } from "@heroui/react";
 import Link from "next/link";
 import Image from "next/image";
 import React, { useState } from "react";
@@ -15,7 +14,7 @@ export function Navegador() {
     const [menuOpen, setMenuOpen] = useState(false)
 
     return (
-        <nav className="relative flex w-full h-19 shadow-md border-b-1 border-gray-500 bg-black items-center justify-center">          
+        <nav className="relative flex w-full h-19 shadow-md border-b-1 border-gray-500 bg-black items-center justify-center">
             <div className="hidden sm:flex justify-center">
                 <div className="mr-5">
                     <Link href="/login" className="text-white text-lg rounder-lg p-3 duration-250 hover:rounded-lg hover:border-1 hover:bg-white hover:text-black active:p-2">Sign In</Link>
@@ -39,8 +38,8 @@ export function Navegador() {
 
             {menuOpen && (
                 <div className="absolute top-full left-0 w-full bg-black/95 p-4 flex flex-col items-center gap-3 sm:hidden shadow-md shadow-gray-700 z-40">       
-                    <Link href="/login" className="text-red-600">Sign In</Link>
-                    <Link href="/register" className="text-blue-600">Sign Up</Link>
+                    <Link href="/login" className="text-red-600 text-xl">Sign In</Link>
+                    <Link href="/register" className="text-blue-600 text-xl">Sign Up</Link>
                 </div>
             )}
 

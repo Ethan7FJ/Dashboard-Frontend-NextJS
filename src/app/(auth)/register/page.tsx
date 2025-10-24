@@ -6,7 +6,6 @@ import { QueryClient, QueryClientProvider, useQuery, } from '@tanstack/react-que
 const queryClient = new QueryClient()
 
 export default function LoginPage() {
-
     return (
         <QueryClientProvider client={queryClient}>
             <div className="h-screen flex items-center justify-center">

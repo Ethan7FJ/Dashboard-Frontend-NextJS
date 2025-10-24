@@ -1,18 +1,22 @@
 "use client";
 
 import "./More/globals.css";
-import { QueryClient, QueryClientProvider, useQuery, } from '@tanstack/react-query'
+import {
+  QueryClient,
+  QueryClientProvider,
+  useQuery,
+} from "@tanstack/react-query";
 
 import { Navegador } from "@/components/layout/Navbar";
 import { Dash } from "@/features/home/components/dash";
 
-const queryClient = new QueryClient()
+const queryClient = new QueryClient();
 
 export default function Home() {
   return (
     <QueryClientProvider client={queryClient}>
       <div>
-        <header >
+        <header>
           <Navegador />
         </header>
         <main className="flex justify-center items-center bg-black h-screen ">
@@ -53,5 +57,3 @@ function Exp() {
   )
 
 } */
-
-

@@ -17,7 +17,6 @@ export function LoginForm() {
   }
 
   if (mutation.isSuccess) {
-        alert("Inicio de sesion completo");
         window.location.href = "/inicio";
     }
 

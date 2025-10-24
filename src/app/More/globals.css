@@ -1,11 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Rhodium+Libre&display=swap');
 @import "tailwindcss";
 @plugin './hero.ts';
 /* Note: You may need to change the path to fit your project structure */
 @source '../../../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
 @custom-variant dark (&:is(.dark *));
 
+
+/* *FONT FAMILY STYLES IMPORTS */
+@import url('https://fonts.googleapis.com/css2?family=Rhodium+Libre&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap');
+
 /* Fonts */
 @theme {
   --font-embed: "Rhodium Libre", sans-serif;
+  --font-caveat: "Cormorant Garamond", sans-serif;
 }
