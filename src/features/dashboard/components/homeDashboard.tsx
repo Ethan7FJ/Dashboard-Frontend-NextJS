@@ -4,16 +4,14 @@ import { useEffect } from "react";
 import { useValideteToken } from "@/features/auth/hooks/ValideToken.hooks";
 import { Greeting } from "./greeeting";
 import { useRouter } from "next/navigation";
-import {useDisclosure, Button} from "@heroui/react";
 
-/* Componets */
-import { DrawerMenuBar } from "@/components/ui/drawer";
+/* COMPONETS */
+import { SliderBar } from "./sliderBar";
 
 export function HomeDashboard() {
 
     const { data, isLoading, isError, error } = useValideteToken();
     const router = useRouter();
-    const {isOpen, onOpen, onOpenChange} = useDisclosure();
 
     useEffect(() => {
         if (isError) {
@@ -34,18 +32,21 @@ export function HomeDashboard() {
     }
 
     return (
-        <div className="min-h-screen flex flex-col bg-gray-50 text-gray-800">
-            <header className="">
-                <Greeting data={data} />
-            </header>
-            <main className="flex-1 px-6 py-8 shadow-lg shadow-black m-3 rounded-lg">
-                <Button onPress={onOpen} className="">Menu</Button>
-                <DrawerMenuBar isOpen={isOpen} onOpenChange={onOpenChange}/>
-                <p className="text-lg font-medium">Ola 👋</p>
-            </main>
-            <footer className="bg-gray-900 text-gray-200 text-center py-4 mt-auto h-15">
-                <p className="text-sm">App © {new Date().getFullYear()} || Johan</p>
-            </footer>
+        <div className="min-h-screen flex">
+            <aside className="w-50 bg-gray-900 mr-1 hidden sm:flex flex-col items-center justify-center">
+                <SliderBar/>
+            </aside>
+            <div className="flex-1 flex flex-col bg-gray-50 text-gray-800">
+                <header className="">
+                    <Greeting data={data} />
+                </header>
+                <main className="h-full px-6 py-8 shadow-lg shadow-black m-3 rounded-lg">
+                    <p className="text-lg font-medium">Ola</p>
+                </main>
+                <footer className="bg-gray-900 text-gray-200 text-center py-4 mt-auto h-15 rounded-tl-lg">
+                    <p className="text-sm">App © {new Date().getFullYear()} || Johan</p>
+                </footer>
+            </div>
         </div>
     )
 }

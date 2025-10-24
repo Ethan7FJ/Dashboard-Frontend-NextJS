@@ -37,7 +37,7 @@ export function Navegador() {
             </div>
 
             {menuOpen && (
-                <div className="absolute top-full left-0 w-full bg-black/95 p-4 flex flex-col items-center gap-3 sm:hidden shadow-md shadow-gray-700 z-40">       
+                <div className="absolute top-full left-0 w-full bg-black/95 p-4 flex flex-col items-center gap-3 sm:hidden shadow-md shadow-gray-700 z-40">
                     <Link href="/login" className="text-red-600 text-xl">Sign In</Link>
                     <Link href="/register" className="text-blue-600 text-xl">Sign Up</Link>
                 </div>

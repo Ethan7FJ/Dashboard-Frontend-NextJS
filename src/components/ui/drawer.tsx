@@ -10,7 +10,6 @@ import {
 
 import { Dashboard } from "@/features/dashboard/types/dashboard";
 
-
 export function DrawerMenuBar({isOpen,onOpenChange}: Dashboard){
     return(
         <div>
@@ -18,25 +17,9 @@ export function DrawerMenuBar({isOpen,onOpenChange}: Dashboard){
                 <DrawerContent>
                 {(onClose) => (
                     <>
-                    <DrawerHeader className="flex flex-col gap-1">Drawer Title</DrawerHeader>
+                    <DrawerHeader className="flex flex-col gap-1">Menu Dashboard</DrawerHeader>
                     <DrawerBody>
-                        <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pulvinar risus non
-                        risus hendrerit venenatis. Pellentesque sit amet hendrerit risus, sed porttitor
-                        quam.
-                        </p>
-                        <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pulvinar risus non
-                        risus hendrerit venenatis. Pellentesque sit amet hendrerit risus, sed porttitor
-                        quam.
-                        </p>
-                        <p>
-                        Magna exercitation reprehenderit magna aute tempor cupidatat consequat elit dolor
-                        adipisicing. Mollit dolor eiusmod sunt ex incididunt cillum quis. Velit duis sit
-                        officia eiusmod Lorem aliqua enim laboris do dolor eiusmod. Et mollit incididunt
-                        nisi consectetur esse laborum eiusmod pariatur proident Lorem eiusmod et. Culpa
-                        deserunt nostrud ad veniam.
-                        </p>
+                        <p>oda</p>
                     </DrawerBody>
                     <DrawerFooter>
                         <Button color="danger" variant="light" onPress={onClose}>
