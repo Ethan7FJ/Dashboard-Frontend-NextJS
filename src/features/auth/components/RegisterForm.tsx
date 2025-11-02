@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { Form, Input, Button } from "@heroui/react";
-import { useCreateUser } from "../services/authService";
+import { useCreateUser } from "../hooks/useLoginuser.hooks";
 import Link from "next/link";
 
 export function RegisterForm() {
@@ -13,7 +13,7 @@ export function RegisterForm() {
 
     async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
-        let data = Object.fromEntries(new FormData(e.currentTarget));
+        const data = Object.fromEntries(new FormData(e.currentTarget));
         mutation.mutate(data)
     }
 

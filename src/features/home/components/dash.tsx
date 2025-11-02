@@ -1,7 +1,5 @@
-"use client";
-import Image from "next/image";
-import { Divider } from "@heroui/react/dist";
 import Link from "next/link";
+import Image from "next/image";
 
 export function Dash() {
     return (
@@ -14,9 +12,9 @@ export function Dash() {
             <div className="col-span-1 md:col-span-3 flex flex-col items-center">
                 <h3 className="text-3xl md:text-4xl m-5 text-white text-shadow-md text-shadow-gray-500 italic">Tecnologias Usadas</h3>
                 <div className="flex m-10">
-                    <img src="https://www.drupal.org/files/project-images/nextjs-icon-dark-background.png" alt="" width={70} height={70} className="m-5 animate-bounce" />
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpjj5cGK1z04lmp5vdMLhhwbsOF0eo_6r1nkimGyMxAkU2cw42Y2_wDyTFT8Ss2102qtU&usqp=CAU" alt="" width={70} height={70} className="rounded-4xl m-5 animate-bounce" />
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkBKGzgKHQA42GTo40DCQUnNVkUWd3FMzFJA&s" alt="" width={70} height={70} className="rounded-4xl m-5 animate-bounce" />
+                    <Image src="https://www.drupal.org/files/project-images/nextjs-icon-dark-background.png" alt="" width={70} height={70} className="m-5 animate-bounce" />
+{/*                     <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpjj5cGK1z04lmp5vdMLhhwbsOF0eo_6r1nkimGyMxAkU2cw42Y2_wDyTFT8Ss2102qtU&usqp=CAU" alt="" width={70} height={70} className="rounded-4xl m-5 animate-bounce" />
+                    <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkBKGzgKHQA42GTo40DCQUnNVkUWd3FMzFJA&s" alt="" width={70} height={70} className="rounded-4xl m-5 animate-bounce" /> */}
 
                 </div>
             </div>
@@ -27,4 +25,4 @@ export function Dash() {
             </div>
         </div>
     )
-} 
+}

@@ -1,4 +1,6 @@
-export function Greeting({ data }: any) {
+import { Data } from "../types/dashboard"
+
+export function Greeting({ data }: { data: Data }) {
     return (
         <div className="bg-gray-900 shadow-md py-4 px-6 flex flex-col items-center justify-center rounded-br-[30%] rounded-bl-[30%] sm:rounded-br-[45%] sm:rounded-bl-[45%]">
             <h2 className="text-white text-xl font-cormorant">!Bienvienido a tu Dashboard¡</h2>

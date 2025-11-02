@@ -1,5 +1,3 @@
-"use client";
-
 export function AcerDe(){
     return(
         <div>
@@ -8,4 +6,4 @@ export function AcerDe(){
             </p>
         </div>
     )
-} 
+}

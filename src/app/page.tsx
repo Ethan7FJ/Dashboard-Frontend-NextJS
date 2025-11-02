@@ -4,7 +4,6 @@ import "./More/globals.css";
 import {
   QueryClient,
   QueryClientProvider,
-  useQuery,
 } from "@tanstack/react-query";
 
 import { Navegador } from "@/components/layout/Navbar";
@@ -29,31 +28,3 @@ export default function Home() {
     </QueryClientProvider>
   );
 }
-
-/* 
-const messages = async () => {
-  const { data } = await api.get("/")
-  return data;
-}
-
-
-function Exp() {
-
-  const { isPending, error, data } = useQuery({
-    queryKey: ["message"],
-    queryFn: messages
-  })
-
-  if (isPending) return <p>Cargando . . .</p>
-
-  if (error) return <p>Hubo un error {error.message}</p>
-
-
-  return (
-    <div className="flex items-center justify-center w-full">
-      <Alert description={data.mensaje} title="mensaje api" />
-    </div>
-
-  )
-
-} */

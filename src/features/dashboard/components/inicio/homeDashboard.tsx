@@ -2,15 +2,22 @@
 
 import { useEffect } from "react";
 import { useValideteToken } from "@/features/auth/hooks/ValideToken.hooks";
-import { Greeting } from "./greeeting";
+import { Greeting } from "../greeeting";
 import { useRouter } from "next/navigation";
-import { SliderBar } from "./sliderBar";
+import dynamic from "next/dynamic";
 
 
 export function HomeDashboard() {
 
     const { data, isLoading, isError } = useValideteToken();
+    console.log(data)
     const router = useRouter();
+
+    /* Components */
+    const Sidebar = dynamic(() => import("../sliderBar").then(mod => mod.SliderBar), {
+        ssr: false,
+        loading: () => <p>Cargando el menu</p>
+    })
 
     useEffect(() => {
         if (isError) {
@@ -20,7 +27,7 @@ export function HomeDashboard() {
             }, 2000)
             return () => clearTimeout(timer);
         }
-    }, [isError, router]);
+    }, [isError,router]);
 
     if (isLoading) {
         return <p className="min-h-screen flex items-center justify-center bg-gray-100">Verificando tu sesion</p>
@@ -33,7 +40,7 @@ export function HomeDashboard() {
     return (
         <div className="min-h-screen flex">
             <aside className="w-50 bg-gray-900 mr-1 hidden sm:flex flex-col items-center justify-center">
-                <SliderBar />
+                <Sidebar />
             </aside>
             <div className="flex-1 flex flex-col bg-gray-50 text-gray-800">
                 <header className="">

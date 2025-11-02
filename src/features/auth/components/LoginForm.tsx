@@ -2,7 +2,8 @@
 import { useState } from "react";
 import { Form, Input, Button } from "@heroui/react";
 import Link from "next/link";
-import { useLoginUser } from "../services/authService";
+import { useLoginUser } from "../hooks/useLoginuser.hooks";
+import { LoginData } from "../types/data";
 
 export function LoginForm() {
   const [email, setEmail] = useState("");
@@ -12,13 +13,18 @@ export function LoginForm() {
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    let data = Object.fromEntries(new FormData(e.currentTarget));
-    mutation.mutate(data);
+    const formData = new FormData(e.currentTarget);
+    const data: LoginData = {
+      email: formData.get("email") as string,
+      password: formData.get("password") as string,
+    };
+
+    mutation.mutate(data);;
   }
 
   if (mutation.isSuccess) {
-        window.location.href = "/inicio";
-    }
+    window.location.href = "/inicio";
+  }
 
   return (
     <Form

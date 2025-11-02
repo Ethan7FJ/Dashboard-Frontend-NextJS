@@ -1,4 +1,13 @@
-export interface Dashboard{
-    isOpen:any;
-    onOpenChange:any;
+/* export interface Dashboard{
+    isOpen:undefined;
+    onOpenChange:undefined;
+} */
+
+export interface Usuario{
+    nombre:string,
+}
+
+export interface Data{
+    nombre: string,
+    usuario: Usuario;
 }
