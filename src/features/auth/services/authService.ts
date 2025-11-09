@@ -8,7 +8,7 @@ export const AuthLogin = async (data: LoginData): Promise<AuthResponse> => {
     const res = await AuthPorts.post("/login", data);
     return res.data;
   } catch (err) {
-    const error = err as AxiosError<{error?: string}>;
+    const error = err as AxiosError<{ error?: string }>;
     console.error("Error en AuthLogin:", error.response?.data || error.message);
     throw err;
   }

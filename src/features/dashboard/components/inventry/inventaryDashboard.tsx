@@ -1,12 +1,15 @@
 "use client";
 
-import { Greeting } from "../greeeting";
 import dynamic from "next/dynamic";
 
-export function HomeDashboard() {
+export function InventaryDashboard() {
 
-    /* Components */
     const Sidebar = dynamic(() => import("../sliderBar").then(mod => mod.SliderBar), {
+        ssr: false,
+        loading: () => <p>Cargando el menu</p>
+    })
+
+    const TableInventory = dynamic(() => import("./fragments/tableInventary").then(mod => mod.TableInventary), {
         ssr: false,
         loading: () => <p>Cargando el menu</p>
     })
@@ -17,11 +20,9 @@ export function HomeDashboard() {
                 <Sidebar />
             </aside>
             <div className="flex-1 flex flex-col bg-gray-50 text-gray-800">
-                <header className="">
-                    <Greeting />
-                </header>
-                <main className="h-full px-6 py-8 shadow-lg shadow-black m-3 rounded-lg">
-                    <p className="text-lg font-medium">Ola</p>
+                <main className="h-full px-6 py-8 shadow-lg shadow-black m-3 rounded-lg flex flex-col justify-center items-center">
+                    <p className="text-lg font-medium mb-10">Inventario</p>
+                    <TableInventory />
                 </main>
                 <footer className="bg-gray-900 text-gray-200 text-center py-4 mt-auto h-15 rounded-tl-lg">
                     <p className="text-sm">App © {new Date().getFullYear()} || Johan</p>
@@ -29,4 +30,5 @@ export function HomeDashboard() {
             </div>
         </div>
     )
+
 }
