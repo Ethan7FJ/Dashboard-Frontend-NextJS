@@ -37,7 +37,7 @@ export function HomeDashboard() {
             </aside>
             <div className="flex-1 flex flex-col bg-gray-50 text-gray-800">
                 <header className="">
-                    <Greeting data={data} />
+                    <Greeting />
                 </header>
                 <main className="h-full px-6 py-8 shadow-lg shadow-black m-3 rounded-lg">
                     <p className="text-lg font-medium">Ola</p>
