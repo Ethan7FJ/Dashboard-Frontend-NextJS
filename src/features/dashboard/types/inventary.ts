@@ -1,0 +1,16 @@
+export interface ProductsTypes {
+    id: number,
+    codigo: string,
+    marca: string,
+    modelo: string,
+    descripcion: string,
+    categoria_id: number,
+    ubicacion: string,
+    cantidad_almacenado: number,
+    unidad_medida: string,
+    precio: number,
+    proveedor_id: number,
+    estado_id: number,
+    fecha_ingreso: string,
+    usuario_responsable: number,
+}

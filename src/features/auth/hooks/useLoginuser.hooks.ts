@@ -1,4 +1,4 @@
-import { AuthLogin, AuthRegister} from "../services/authService";
+import { AuthLogin, AuthRegister } from "../services/authService";
 import { useMutation } from "@tanstack/react-query";
 import { AxiosError } from "axios";
 
@@ -9,12 +9,11 @@ export function useLoginUser() {
       localStorage.setItem("token", data.token);
     },
     onError: (err) => {
-      const error = err as AxiosError<{error?: string}>;
+      const error = err as AxiosError<{ error?: string }>;
       alert(error.response?.data?.error || "Error al iniciar session")
     }
   })
 }
-
 
 export function useCreateUser() {
   return useMutation({

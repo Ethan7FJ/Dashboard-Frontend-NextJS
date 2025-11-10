@@ -6,12 +6,12 @@ export function InventaryDashboard() {
 
     const Sidebar = dynamic(() => import("../sliderBar").then(mod => mod.SliderBar), {
         ssr: false,
-        loading: () => <p>Cargando el menu</p>
+        loading: () => <p>Cargando el menu ...</p>
     })
 
     const TableInventory = dynamic(() => import("./fragments/tableInventary").then(mod => mod.TableInventary), {
         ssr: false,
-        loading: () => <p>Cargando el menu</p>
+        loading: () => <p>Cargando tabla ...</p>
     })
 
     return (

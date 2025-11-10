@@ -1,34 +1,30 @@
+"use client";
+
 import { Table, TableHeader, TableColumn, TableBody, TableRow, TableCell } from "@heroui/react";
+import { showProducts } from "@/features/dashboard/hooks/inventary.hooks";
 
 export function TableInventary() {
+
+    const { data: productos, isLoading, isError, error } = showProducts();
+
+    if (isLoading) return <p>Cargando productos ... </p>
+    if (isError) return <p>Error: {error.message}</p>
+
     return (
         <Table aria-label="Example static collection table">
             <TableHeader>
-                <TableColumn>NAME</TableColumn>
-                <TableColumn>ROLE</TableColumn>
-                <TableColumn>STATUS</TableColumn>
+                <TableColumn>CODIGO</TableColumn>
+                <TableColumn>MARCA</TableColumn>
+                <TableColumn>MODELO</TableColumn>
             </TableHeader>
-            <TableBody>
-                <TableRow key="1">
-                    <TableCell>Tony Reichert</TableCell>
-                    <TableCell>CEO</TableCell>
-                    <TableCell>Active</TableCell>
-                </TableRow>
-                <TableRow key="2">
-                    <TableCell>Zoey Lang</TableCell>
-                    <TableCell>Technical Lead</TableCell>
-                    <TableCell>Paused</TableCell>
-                </TableRow>
-                <TableRow key="3">
-                    <TableCell>Jane Fisher</TableCell>
-                    <TableCell>Senior Developer</TableCell>
-                    <TableCell>Active</TableCell>
-                </TableRow>
-                <TableRow key="4">
-                    <TableCell>William Howard</TableCell>
-                    <TableCell>Community Manager</TableCell>
-                    <TableCell>Vacation</TableCell>
-                </TableRow>
+            <TableBody items={productos ?? []}>
+                {(item) => (
+                    <TableRow key={item.id}>
+                        <TableCell>{item.codigo}</TableCell>
+                        <TableCell>{item.marca}</TableCell>
+                        <TableCell>{item.modelo}</TableCell>
+                    </TableRow>
+                )}
             </TableBody>
         </Table>
     )

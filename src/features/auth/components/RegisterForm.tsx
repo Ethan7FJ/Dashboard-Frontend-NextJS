@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Form, Input, Button } from "@heroui/react";
 import { useCreateUser } from "../hooks/useLoginuser.hooks";
 import Link from "next/link";
+import { RegisterData } from "../types/data";
 
 export function RegisterForm() {
     const [nombre, setNombre] = useState("");
@@ -13,7 +14,13 @@ export function RegisterForm() {
 
     async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
-        const data = Object.fromEntries(new FormData(e.currentTarget));
+        const formData = new FormData(e.currentTarget);
+
+        const data: RegisterData = {
+            nombre: formData.get("nombre") as string,
+            email: formData.get("email") as string,
+            password: formData.get("password") as string,
+        }
         mutation.mutate(data)
     }
 
