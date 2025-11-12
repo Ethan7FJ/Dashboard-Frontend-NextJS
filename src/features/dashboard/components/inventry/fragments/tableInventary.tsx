@@ -10,7 +10,7 @@ export function TableInventary() {
 
     const { data: productos, isLoading, isError, error } = showProducts();
 
-    const rowsView = 2;
+    const rowsView = 6;
 
     const pages = React.useMemo(() => {
         return productos ? Math.ceil(productos?.length / rowsView) : 0;
@@ -71,17 +71,17 @@ export function TableInventary() {
                 >
                     {(item) => (
                         <TableRow key={item.id}>
-                            <TableCell>{item.codigo}</TableCell>
-                            <TableCell>{item.marca}</TableCell>
-                            <TableCell>{item.modelo}</TableCell>
+                            <TableCell className="text-lg sm:text-sm">{item.codigo}</TableCell>
+                            <TableCell className="text-lg sm:text-sm">{item.marca}</TableCell>
+                            <TableCell className="text-lg sm:text-sm">{item.modelo}</TableCell>
                             <TableCell className="hidden sm:table-cell">{item.descripcion}</TableCell>
-                            <TableCell>{item.categoria}</TableCell>
+                            <TableCell className="text-lg sm:text-sm">{item.categoria}</TableCell>
                             <TableCell className="hidden sm:table-cell">{item.ubicacion}</TableCell>
                             <TableCell className="text-center hidden sm:table-cell">{item.cantidad_almacenado}</TableCell>
                             <TableCell className="text-center hidden sm:table-cell">{item.unidad_medida}</TableCell>
-                            <TableCell>{item.precio}</TableCell>
-                            <TableCell>{item.proveedor}</TableCell>
-                            <TableCell>{item.tipo_estado}</TableCell>
+                            <TableCell className="text-lg sm:text-sm">{item.precio}</TableCell>
+                            <TableCell className="text-lg sm:text-sm">{item.proveedor}</TableCell>
+                            <TableCell className="text-lg sm:text-sm">{item.tipo_estado}</TableCell>
                             <TableCell className="hidden sm:table-cell">{new Date(item.fecha_ingreso).toLocaleDateString("es-CO", { year: "numeric", month: "long", day: "numeric" })}</TableCell>
                             <TableCell className="hidden sm:table-cell">{item.nombre}</TableCell>
                         </TableRow>
