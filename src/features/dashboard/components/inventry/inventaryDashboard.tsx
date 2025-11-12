@@ -16,12 +16,14 @@ export function InventaryDashboard() {
 
     return (
         <div className="min-h-screen flex">
-            <aside className="w-50 bg-gray-900 mr-1 hidden sm:flex flex-col items-center justify-center">
+            <aside className="w-50 bg-gray-900 mr-1 hidden lg:flex flex-col items-center justify-center">
                 <Sidebar />
             </aside>
             <div className="flex-1 flex flex-col bg-gray-50 text-gray-800">
-                <main className="h-full px-6 py-8 shadow-lg shadow-black m-3 rounded-lg flex flex-col justify-center items-center">
-                    <p className="text-lg font-medium mb-10">Inventario</p>
+                <header className="bg-gray-900 shadow-md flex justify-center items-center rounded-bl-lg">
+                    <p className="text-5xl font-embed p-5 text-white">Inventario</p>
+                </header>
+                <main className="flex-1 h-full px-6 py-8 shadow-lg shadow-black !m-1 md:!m-2 rounded-lg flex flex-col justify-center items-center">
                     <TableInventory />
                 </main>
                 <footer className="bg-gray-900 text-gray-200 text-center py-4 mt-auto h-15 rounded-tl-lg">

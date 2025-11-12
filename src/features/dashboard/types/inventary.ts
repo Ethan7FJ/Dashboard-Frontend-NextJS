@@ -13,4 +13,8 @@ export interface ProductsTypes {
     estado_id: number,
     fecha_ingreso: string,
     usuario_responsable: number,
+    proveedor: string,
+    categoria: string,
+    tipo_estado: string,
+    nombre: string,
 }
