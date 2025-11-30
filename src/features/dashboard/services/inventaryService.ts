@@ -15,3 +15,8 @@ export const ProductsList = async (): Promise<ProductsTypes[]> => {
         throw err;
     }
 }
+
+
+export const DeleteProduct = async (id: number) => {
+    return await InventaryPorts.delete(`/productos/delete/${id}`);
+}

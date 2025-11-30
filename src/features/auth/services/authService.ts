@@ -1,6 +1,6 @@
 import { AuthPorts } from "@/lib/auth.services";
-import { LoginData, AuthResponse } from "../types/data";
 import { AxiosError } from "axios";
+import { AuthResponse, LoginData } from "../types/data";
 
 /* LOGIN */
 export const AuthLogin = async (data: LoginData): Promise<AuthResponse> => {

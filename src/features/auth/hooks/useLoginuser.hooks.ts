@@ -1,6 +1,6 @@
-import { AuthLogin, AuthRegister } from "../services/authService";
 import { useMutation } from "@tanstack/react-query";
 import { AxiosError } from "axios";
+import { AuthLogin, AuthRegister } from "../services/authService";
 
 export function useLoginUser() {
   return useMutation({

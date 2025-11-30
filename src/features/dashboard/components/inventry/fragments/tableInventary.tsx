@@ -1,7 +1,8 @@
 "use client";
 
-import { Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Pagination, Spinner } from "@heroui/react";
+import { ButtonActions } from "@/components/layout/ButtonActions";
 import { showProducts } from "@/features/dashboard/hooks/inventary.hooks";
+import { Pagination, Spinner, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from "@heroui/react";
 import React from "react";
 
 export function TableInventary() {
@@ -50,6 +51,7 @@ export function TableInventary() {
                 }
             >
                 <TableHeader>
+                    <TableColumn>ID</TableColumn>
                     <TableColumn>CODIGO</TableColumn>
                     <TableColumn>MARCA</TableColumn>
                     <TableColumn>MODELO</TableColumn>
@@ -63,6 +65,8 @@ export function TableInventary() {
                     <TableColumn>ESTADO</TableColumn>
                     <TableColumn className="hidden sm:table-cell">FECHA DE INGRESO</TableColumn>
                     <TableColumn className="hidden sm:table-cell">USUARIO RESPONSABLE</TableColumn>
+                    <TableColumn>Editar</TableColumn>
+                    <TableColumn>Eliminar</TableColumn>
                 </TableHeader>
                 <TableBody
                     items={pageItem ?? []}
@@ -71,6 +75,7 @@ export function TableInventary() {
                 >
                     {(item) => (
                         <TableRow key={item.id}>
+                            <TableCell className="text-lg sm:text-sm">{item.id}</TableCell>
                             <TableCell className="text-lg sm:text-sm">{item.codigo}</TableCell>
                             <TableCell className="text-lg sm:text-sm">{item.marca}</TableCell>
                             <TableCell className="text-lg sm:text-sm">{item.modelo}</TableCell>
@@ -84,6 +89,12 @@ export function TableInventary() {
                             <TableCell className="text-lg sm:text-sm">{item.tipo_estado}</TableCell>
                             <TableCell className="hidden sm:table-cell">{new Date(item.fecha_ingreso).toLocaleDateString("es-CO", { year: "numeric", month: "long", day: "numeric" })}</TableCell>
                             <TableCell className="hidden sm:table-cell">{item.nombre}</TableCell>
+                            <TableCell>
+                                <ButtonActions title="Editar" id={item.id} action="Editar" />
+                            </TableCell>
+                            <TableCell>
+                                <ButtonActions title="Eliminar" id={item.id} action="Eliminar" />
+                            </TableCell>
                         </TableRow>
                     )}
                 </TableBody>

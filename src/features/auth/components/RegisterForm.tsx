@@ -1,8 +1,8 @@
 "use client";
-import React, { useState } from "react";
-import { Form, Input, Button } from "@heroui/react";
-import { useCreateUser } from "../hooks/useLoginuser.hooks";
+import { Button, Form, Input } from "@heroui/react";
 import Link from "next/link";
+import React, { useState } from "react";
+import { useCreateUser } from "../hooks/useLoginuser.hooks";
 import { RegisterData } from "../types/data";
 
 export function RegisterForm() {
